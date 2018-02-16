@@ -1,0 +1,52 @@
+/*
+ *MOBILES
+ */
+@media screen and (max-width:480px){ /*TODO: base on more reliable quantities*/
+
+	
+}
+/*
+ *PHABLETS
+ *one-column, thinner or horizontal sidebar
+ */
+
+@media screen and (max-width:700px){ /*TODO: base on more reliable quantities*/
+
+	/* Change layout, make sidebar toggleable */
+	#main-wrap{
+		flex-direction: column;
+	}
+	#sidebar-togglinator{
+		display: block;
+	}
+	
+		.hide-the-kids>.toggleable{
+			display: none;
+		}
+	
+}
+
+/*
+ *TABLETS
+ *sidebar, two columns
+ */
+@media screen and (max-width:1024px){
+	/*Individual modules -- person visual
+	 * fix images to fill whole space */
+	.person-presentation{
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 12rem;
+		padding-left: 1.4rem;
+		max-height: 1200px;
+		}
+	.person-desc__photo{
+		margin: 0 auto;
+		margin-top: -12rem;
+	}
+
+}
+/*
+ *FATSCREENS
+ *sidebar, three columns, multimedia header
+ */

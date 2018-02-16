@@ -1,0 +1,351 @@
+body,html{
+
+	width: 100%;
+	min-height: 100%;
+	display: block; 
+	font-family: 'Lato', 'Lato Sans','Helvetica Neue', 'HelveticaNeue', 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+html{
+
+	font-size: 10px;
+
+}
+
+/*
+ * BASES
+ */
+.line{
+	display: flex;
+	flex-direction: row;
+}
+
+
+/*
+ *PAGE LAYOUT
+ */
+#main-wrap{
+display: flex;
+overflow: hidden;
+height: 100%;
+flex-direction: row;
+}
+#page-sidebar{
+
+background: blue;
+min-width: 24rem;
+display: flex;
+flex-direction: column;
+}
+	#sidebar-togglinator{
+		display: none;
+		}
+	#togglebar-line{
+		flex-direction:row-reverse;
+	}
+#page-content{
+
+	min-height: 100vh;
+	margin-top: -2.4rem;
+	padding-top: 2.4rem;
+	box-sizing: border-box;
+	/*TODO: get rid of negative margins*/
+}
+
+#page-head{
+	height: 4.8rem;
+	line-height: 4.8rem;
+	font-size: 2rem;
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: row;	
+	justify-content: space-between;
+	transition: all .8s ease-in-out;
+	
+}
+body.scrolled-past #page-head{
+		background:  url(../images/patterns/edyucayshin.svg),linear-gradient(to top right,#500850,#018400);
+		color: white;
+}
+	.pin-left{
+	display: flex;
+	flex-weight: 0.1;
+	}
+	.pin-right{
+	display: flex;
+	flex-direction: row-reverse;
+	flex-weight: 0.9;
+	}
+
+#page-foot{
+background: red;
+margin-bottom: -100%;
+
+}
+
+/*
+ *COLOUR SCHEME
+ */
+	/*
+	 *main back: #018400(green)
+	 *second back: #500850(violet)
+	 *yellow accent: f00;
+	 *orange: #ddb819;
+	 */	
+/*
+ *DAFAULT STYLING
+ */
+.person-desc__photo{
+
+	border-radius: 24rem;
+	min-width: 24rem;
+	max-width: 24rem;
+	min-height: 24rem;
+	max-height:24rem;
+	background: inherit;
+	margin: 2rem;
+}
+.person-presentation{
+margin: 1.6rem;
+padding-right: 1.4rem;
+padding-left: 0.4rem;
+background: f0f0f0;
+background: rgba(127,127,127,0.6); /*TODO: absolutify */
+
+max-width: 92rem;
+}
+.person-desc__head-part{
+	line-height: 2.8rem;
+	margin: 0.6rem 0;
+	padding: 0.6rem 0;
+	width: 100%;
+	border-bottom: 2px solid inherit;
+}
+.button{
+	margin: 0;
+	padding: 1.2rem;
+	line-height: 1.2rem;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	border-radius: 0;
+}
+.rightflow-container{
+display: flex;
+flex-direction: row-reverse;
+}
+
+.leftflow-container{
+display: flex;
+flex-direction: reverse;
+}
+
+.backgroundifier{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+}
+
+.stick-bottom{
+position: absolute;
+bottom: 0px;
+bottom: 2vh;
+}
+.abs-hcenter{
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+
+}
+.abs-center{
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+}
+.nav_clearfix{
+visibility:hidden;
+}
+.header-third{
+height: 33%;
+display: block;
+/*border-top: 1px solid black;*/
+overflow: hidden;
+position: relative;
+z-index: 100;
+}
+.right-column{
+text-align: right;
+padding-right:4rem;
+display: flex;
+flex-direction: row-reverse;
+}
+.mid-column{
+text-align: center;
+padding: 0 2rem;
+}
+.left-column{
+text-align: left;
+padding-left: 4rem;
+display: flex;
+flex-direction: row;
+}
+
+/*fa tricks
+ */
+.fa{
+display: none;
+}
+/*
+ * COMPONENT-SPECIFIC
+ */
+	.butt-goto-next{
+		font-size: 3.8rem;
+		font-weight: lighter;
+		transition: margin .5s ease-in-out;
+		z-index: 900;
+		height: 7rem;
+	}
+	.butt-goto-next p{
+		color: rgba(10,10,10,0.4);	
+		line-height:0.45em;transform:scaleX(1.5);
+		transition: all .5s ease-in-out;
+	}
+	.butt-goto-next .shape{
+		color: inherit;
+		text-shadow: 0px 0px 1px;
+		text-shadow:
+		            -0.4px -0.4px 0,  
+				    0.4px -0.4px 0,
+				        -0.4px 0.4px 0,
+					       0.4px 0.4px 0 ;
+		transition: all .5s ease-in-out;
+	}
+	.butt-goto-next:hover p{ /*TODO: fix also with svg*/
+		line-height: 0.55em;
+		margin-bottom: 0.1em;
+	}
+	.butt-goto-next:hover{
+	color: white;
+	}
+
+	.butt-goto-next:hover .shape{
+		/*color: white !important;*/
+		animation: 1.2s linear 0s forwards whiten;
+	}
+	/*Main page thingo
+	 */
+	#main-billboard{
+		min-height: 100vh;
+		height: 100vh;
+		margin-top: -4.8rem;
+		padding-top: 4.8rem;
+		box-sizing: border-box;
+		position: relative;
+		display: block;
+		background-color: #018400;
+		/*#ddb814 -- yella*/
+		background: linear-gradient(to top right,#500850,#018400); /**/
+	}
+	#main-billboard .backgroundifier{
+		background: url(../images/patterns/edyucayshin.svg);
+		opacity: 0.5;
+		background-size: 24%;
+	}
+	.logo-text{
+	color: white;
+	font-size: 12.8rem;
+	font-weight: lighter;
+	padding: 0 2.4rem;
+	/*
+	background: rgba(255,255,255,0.06);
+	box-shadow: 0px 0px 40px 15px  rgba(255,255,255,0.07);
+	*/
+	}
+	/*
+	.logo-text::first-letter{*/
+	.logo-text em{
+	font-weight: 300;
+	text-decoration: none;
+	font-style: normal;
+	}
+
+	.main-info{
+	color: white;
+	font-weight: regular;
+	}
+
+
+	.qablock{
+	margin: 4rem 2rem;
+	}
+
+	.main-info.q{
+		font-weight: bold;
+	margin-bottom: 0rem;
+	}
+
+	.main-info.a{
+	font-size: 1.2em;
+	}
+/*
+ * ANIMATIONS
+ */
+/*what to animate*/
+	.floating{
+		animation: 2s ease-in-out 0s infinite alternate floating;
+	}
+	.shape{
+		animation: 1.2s linear 0s infinite glimmer;
+	}
+		.first-shape{
+			animation-delay: 0;
+		}
+		.second-shape{
+			animation-delay: 0.15s;
+		}
+		.third-shape{
+			animation-delay: 0.3s;
+		}
+/*defs*/
+@keyframes floating{
+	0%{
+		margin-bottom: 5rem;
+	}	
+	50%{
+		margin-bottom: 0;
+	}
+	100%{
+		margin-bottom: 5rem;
+	}
+}
+@keyframes glimmer{
+	0%{
+		color: inherit;
+	}
+
+	30%{
+		color: inherit;
+	}
+	50%{
+		color: white;
+	}
+	70%{
+		color: inherit;
+	}
+	100%{
+		color: inherit;
+	}
+
+
+}
+
+@keyframes whiten{
+0%{color:inherit;}
+100%{color:white;}
+
+}
