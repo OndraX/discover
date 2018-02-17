@@ -23,7 +23,7 @@ var body = $('html, body');
 	function mHideHead(){
 	scrollTo($('#page-head'));
 
-	document.body.classList.toggle('scrolled-past'); //TODO: polyfill
+	document.body.classList.add('scrolled-past'); //TODO: polyfill
 	
 	}
 
